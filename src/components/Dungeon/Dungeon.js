@@ -19,10 +19,13 @@ const defaultEnemyCount = () => [
   Math.floor(Math.random() * 3)
 ];
 
-function Dungeon({ level, damageUser }) {
+function Dungeon({ level, damageUser, toggleDungeon }) {
   // 🎣 React hooks for state
   const [currentEnemies, setEnemyCount] = useState(defaultEnemyCount());
   const [currentLevel, setLevel] = useState(1);
+
+  // Callback for sending user back to overworld
+  const clickOverworld = () => toggleDungeon(false);
 
   // Generates next level when user decides
   const nextLevel = () => {
@@ -80,6 +83,7 @@ function Dungeon({ level, damageUser }) {
           </button>
         </div>
       )}
+      <button onClick={clickOverworld}>Back to overworld</button>
     </div>
   );
 }

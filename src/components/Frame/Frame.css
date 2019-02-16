@@ -1,0 +1,6 @@
+.GameFrame {
+  width: 480px;
+  height: 640px;
+  overflow: hidden;
+  margin: auto;
+}

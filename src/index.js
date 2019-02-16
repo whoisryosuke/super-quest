@@ -5,6 +5,9 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { healUser } from "./redux/actions";
 
+import Frame from "./components/Frame/Frame";
+import GameController from "./components/GameController/GameController";
+import Overworld from "./components/Overworld/Overworld";
 import Dungeon from "./components/Dungeon/Dungeon";
 import UserMenu from "./components/UserMenu/UserMenu";
 import "./styles.css";
@@ -22,8 +25,10 @@ setInterval(function() {
 function App() {
   return (
     <Provider store={store} className="App">
-      <Dungeon level="cave" />
-      <UserMenu />
+      <Frame>
+        <GameController />
+        <UserMenu />
+      </Frame>
     </Provider>
   );
 }

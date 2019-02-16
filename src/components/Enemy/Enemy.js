@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Damage from "../Damage/Damage";
 
 const Enemy = ({ id, name, health, damage, sprite, onClick, onDeath }) => {
   const [currentHealth, setHealth] = useState(health);
+  const [currentAnimations, setAnimation] = useState([]);
   console.log(name, health, currentHealth);
-  let damageAnimation = [];
   const displayDamageAnimation = animation => {
-    // setTimeout(function() {
-    //   damage = "";
-    //   console.log("removing damage");
-    // }, 100);
-    damageAnimation.push(<Damage animation={animation} />);
-    console.log("displaying damage", damageAnimation);
+    const animations = <img src={animation} />;
+    setAnimation([...currentAnimations, animations]);
+    console.log("displaying damage", animation);
+    console.log("displaying damage", currentAnimations);
   };
+  useEffect(
+    () => {
+      setTimeout(function() {
+        setAnimation([]);
+        console.log("removing damage");
+      }, 200);
+    },
+    [currentHealth]
+  );
   const clickDamage = () => {
     const damageAnimationURL = "https://i.imgur.com/N52VYWr.gif";
     displayDamageAnimation(damageAnimationURL);
@@ -42,7 +49,9 @@ const Enemy = ({ id, name, health, damage, sprite, onClick, onDeath }) => {
     >
       <figure style={{ position: "relative" }}>
         <img src={sprite} alt={name} />
-        {damageAnimation}
+        <div style={{ position: "absolute", top: 0, bottom: 0 }}>
+          {currentAnimations}
+        </div>
       </figure>
       {name}
     </button>
