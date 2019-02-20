@@ -1,4 +1,6 @@
 .App {
+  width: 480px;
+  margin: auto;
   font-family: sans-serif;
   text-align: center;
 }

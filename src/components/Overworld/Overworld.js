@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import config from "../../config/overworld";
 import "./Overworld.css";
 
@@ -32,15 +32,27 @@ export default function Overworld({ currentLevel, toggleDungeon }) {
   );
 
   return (
-    <div
-      className="Overworld"
-      style={{
-        backgroundImage: `url(${level.background})`,
-        position: "relative"
-      }}
-    >
-      {shop}
-      {dungeon}
+    <div className="Overworld">
+      <div
+        className="Level"
+        id="one"
+        style={{
+          backgroundImage: `url(${level.background})`
+        }}
+      >
+        {shop}
+        {dungeon}
+      </div>
+      <div
+        className="Level"
+        id="two"
+        style={{
+          backgroundImage: `url(${level.background})`
+        }}
+      >
+        {shop}
+        {dungeon}
+      </div>
     </div>
   );
 }

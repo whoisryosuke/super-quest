@@ -24,11 +24,13 @@ setInterval(function() {
  */
 function App() {
   return (
-    <Provider store={store} className="App">
-      <Frame>
-        <GameController />
+    <Provider store={store}>
+      <div className="App">
+        <Frame>
+          <GameController />
+        </Frame>
         <UserMenu />
-      </Frame>
+      </div>
     </Provider>
   );
 }

@@ -1,6 +1,29 @@
 .GameFrame {
   width: 480px;
-  height: 640px;
-  overflow: hidden;
+  height: 600px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-points-y: repeat(600px);
+  -ms-scroll-snap-points-y: repeat(600px);
+  scroll-snap-points-y: repeat(600px);
+  -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
+  scroll-snap-type: mandatory;
+  -webkit-scroll-snap-destination: 0 0;
+  -ms-scroll-snap-destination: 0 0;
+  scroll-snap-destination: 0 0;
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.GameFrame::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
