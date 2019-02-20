@@ -6,11 +6,9 @@ export default function Overworld({ currentLevel, toggleDungeon }) {
   const level = config[currentLevel] ? config[currentLevel] : config[0];
   const clickDungeon = () => toggleDungeon(true);
   const shop = (
-    <img
-      src={level.shop.icon}
+    <i
+      className="nes-icon coin"
       style={{
-        width: "32px",
-        height: "auto",
         position: "absolute",
         top: level.shop.position.y,
         left: level.shop.position.x

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Enemy.css";
 
 import Damage from "../Damage/Damage";
 
@@ -38,15 +39,7 @@ const Enemy = ({ id, name, health, damage, sprite, onClick, onDeath }) => {
   // const deadDisplay = currentHealth <= 0 ? "none" : "inline-block";
   console.log(name, health, currentHealth);
   return (
-    <button
-      style={{
-        background: "transparent",
-        border: 0,
-        color: "#FFF"
-        // display: deadDisplay
-      }}
-      onClick={clickDamage}
-    >
+    <button className="Enemy" onClick={clickDamage}>
       <figure style={{ position: "relative" }}>
         <img src={sprite} alt={name} />
         <div style={{ position: "absolute", top: 0, bottom: 0 }}>

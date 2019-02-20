@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { connect } from "react-redux";
 import store from "../../redux/store";
+import "./Dungeon.css";
 
 import { damageUser } from "../../redux/actions";
 
@@ -59,13 +60,9 @@ function Dungeon({ level, damageUser, toggleDungeon }) {
   console.log("dungeon re-rendering", currentEnemies);
   return (
     <div
+      className="Dungeon"
       style={{
-        minHeight: "288px",
-        backgroundImage: `url(${theDungeon.background})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top left",
-        backgroundColor: "#000",
-        backgroundSize: "100% auto"
+        backgroundImage: `url(${theDungeon.background})`
       }}
     >
       <span style={{ color: "white" }}>Level {currentLevel}</span>
@@ -73,17 +70,19 @@ function Dungeon({ level, damageUser, toggleDungeon }) {
         <div style={{ width: "100%", padding: "3em 0" }}>{enemies}</div>
       ) : (
         <div>
-          You win!
-          <br />
-          <button
-            style={{ background: "white", color: "black" }}
-            onClick={nextLevel}
-          >
+          <div className="nes-container is-rounded">
+            <p>You win!</p>
+          </div>
+          <button className="nes-btn is-success" onClick={nextLevel}>
             Next Level
           </button>
         </div>
       )}
-      <button onClick={clickOverworld}>Back to overworld</button>
+      <div className="Dungeon__BackBtn">
+        <button className=" nes-btn is-warning" onClick={clickOverworld}>
+          Back to overworld
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,24 @@
+html,
+body,
+pre,
+code,
+kbd,
+samp,
+button {
+  font-family: "Press Start 2P", cursive;
+}
+
 .App {
   width: 480px;
   margin: auto;
-  font-family: sans-serif;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
+}
+
+button.nes-btn {
+  color: #fff;
+}
+
+.nes-container {
+  background: #fff;
 }

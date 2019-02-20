@@ -25,6 +25,10 @@ setInterval(function() {
 function App() {
   return (
     <Provider store={store}>
+      <link
+        href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+        rel="stylesheet"
+      />
       <div className="App">
         <Frame>
           <GameController />
