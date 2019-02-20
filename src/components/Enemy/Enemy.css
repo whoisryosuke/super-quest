@@ -2,5 +2,18 @@
   background: transparent;
   border: 0;
   color: #fff;
+}
+
+button.Enemy,
+.Enemy div,
+.Enemy img,
+.Enemy figure {
   outline: 0;
+}
+
+.animation img {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  mix-blend-mode: screen;
 }

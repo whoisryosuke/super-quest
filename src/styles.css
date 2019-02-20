@@ -13,6 +13,12 @@ button {
   margin: auto;
   font-family: "Press Start 2P", cursive;
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none;
 }
 
 button.nes-btn {

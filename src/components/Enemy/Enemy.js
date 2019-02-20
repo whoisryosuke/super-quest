@@ -42,7 +42,10 @@ const Enemy = ({ id, name, health, damage, sprite, onClick, onDeath }) => {
     <button className="Enemy" onClick={clickDamage}>
       <figure style={{ position: "relative" }}>
         <img src={sprite} alt={name} />
-        <div style={{ position: "absolute", top: 0, bottom: 0 }}>
+        <div
+          className="animation"
+          style={{ position: "absolute", top: 0, bottom: 0 }}
+        >
           {currentAnimations}
         </div>
       </figure>
