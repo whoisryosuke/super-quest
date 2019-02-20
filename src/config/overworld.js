@@ -25,6 +25,33 @@ const overworld = [
         }
       ]
     }
+  },
+  {
+    name: "Level 2",
+    background:
+      "https://img.itch.zone/aW1hZ2UvNTMyNTQvMjM2NTcxLmpwZw==/original/mVskWF.jpg",
+    dungeon: {
+      name: "ice_cavern",
+      position: {
+        x: 150,
+        y: 300
+      }
+    },
+    shop: {
+      icon:
+        "http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Coin-icon.png",
+      position: {
+        x: 363,
+        y: 126
+      },
+      items: [
+        {
+          name: "item",
+          price: 10,
+          image: "img"
+        }
+      ]
+    }
   }
 ];
 

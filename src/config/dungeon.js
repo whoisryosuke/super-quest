@@ -22,6 +22,33 @@ const dungeons = {
         sprite: "https://i.imgur.com/gasUwD2.gif"
       }
     ]
+  },
+  ice_cavern: {
+    name: "Ice Cavern",
+    background: "http://illiaworld.files.wordpress.com/2012/01/icecave.png",
+    enemies: [
+      {
+        name: "Ice Lizard",
+        health: 500,
+        damage: 50,
+        sprite:
+          "http://www.videogamesprites.net/FinalFantasy4/Enemies/IceLizard.gif"
+      },
+      {
+        name: "Crawler",
+        health: 600,
+        damage: 60,
+        sprite:
+          "http://www.videogamesprites.net/FinalFantasy4/Enemies/Crawler.gif"
+      },
+      {
+        name: "Mithril Ogre",
+        health: 600,
+        damage: 70,
+        sprite:
+          "http://www.videogamesprites.net/FinalFantasy4/Enemies/MythrilGolem.gif"
+      }
+    ]
   }
 };
 

@@ -23,14 +23,14 @@ const defaultEnemyCount = () => [
 function Dungeon({ level, damageUser, toggleDungeon }) {
   // 🎣 React hooks for state
   const [currentEnemies, setEnemyCount] = useState(defaultEnemyCount());
-  const [currentLevel, setLevel] = useState(1);
+  const [currentFloor, setFloor] = useState(1);
 
   // Callback for sending user back to overworld
   const clickOverworld = () => toggleDungeon(false);
 
   // Generates next level when user decides
-  const nextLevel = () => {
-    setLevel(currentLevel + 1);
+  const nextFloor = () => {
+    setFloor(currentFloor + 1);
     setEnemyCount(defaultEnemyCount());
   };
 
@@ -65,7 +65,7 @@ function Dungeon({ level, damageUser, toggleDungeon }) {
         backgroundImage: `url(${theDungeon.background})`
       }}
     >
-      <span style={{ color: "white" }}>Level {currentLevel}</span>
+      <span style={{ color: "white" }}>Floor {currentFloor}</span>
       {currentEnemies.length > 0 ? (
         <div style={{ width: "100%", padding: "3em 0" }}>{enemies}</div>
       ) : (
@@ -73,8 +73,8 @@ function Dungeon({ level, damageUser, toggleDungeon }) {
           <div className="nes-container is-rounded">
             <p>You win!</p>
           </div>
-          <button className="nes-btn is-success" onClick={nextLevel}>
-            Next Level
+          <button className="nes-btn is-success" onClick={nextFloor}>
+            Next Floor
           </button>
         </div>
       )}

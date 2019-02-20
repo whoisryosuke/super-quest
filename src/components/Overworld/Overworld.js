@@ -3,54 +3,40 @@ import config from "../../config/overworld";
 import "./Overworld.css";
 
 export default function Overworld({ currentLevel, toggleDungeon }) {
-  const level = config[currentLevel] ? config[currentLevel] : config[0];
-  const clickDungeon = () => toggleDungeon(true);
-  const shop = (
-    <i
-      className="nes-icon coin"
-      style={{
-        position: "absolute",
-        top: level.shop.position.y,
-        left: level.shop.position.x
-      }}
-    />
-  );
-  const dungeon = (
-    <img
-      src="https://i.imgur.com/NUJDesD.png"
-      style={{
-        width: "32px",
-        height: "auto",
-        position: "absolute",
-        top: level.dungeon.position.y,
-        left: level.dungeon.position.x
-      }}
-      onClick={clickDungeon}
-    />
-  );
+  const currentLevelConfig = config[currentLevel]
+    ? config[currentLevel]
+    : config[0];
+  const clickDungeon = dungeon => toggleDungeon(true, dungeon);
 
-  return (
-    <div className="Overworld">
-      <div
-        className="Level"
-        id="one"
+  const levels = config.map(level => (
+    <div
+      className="Level"
+      id="one"
+      style={{
+        backgroundImage: `url(${level.background})`
+      }}
+    >
+      <i
+        className="nes-icon coin"
         style={{
-          backgroundImage: `url(${level.background})`
+          position: "absolute",
+          top: level.shop.position.y,
+          left: level.shop.position.x
         }}
-      >
-        {shop}
-        {dungeon}
-      </div>
-      <div
-        className="Level"
-        id="two"
+      />
+      <img
+        src="https://i.imgur.com/NUJDesD.png"
         style={{
-          backgroundImage: `url(${level.background})`
+          width: "32px",
+          height: "auto",
+          position: "absolute",
+          top: level.dungeon.position.y,
+          left: level.dungeon.position.x
         }}
-      >
-        {shop}
-        {dungeon}
-      </div>
+        onClick={() => clickDungeon(level.dungeon.name)}
+      />
     </div>
-  );
+  ));
+
+  return <div className="Overworld">{levels}</div>;
 }
